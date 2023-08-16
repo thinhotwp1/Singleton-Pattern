@@ -6,30 +6,33 @@ package singleton.pattern;
 
 import java.io.Serializable;
 
-public class SerializedSingleton implements Serializable {
- 
-    private static final long serialVersionUID = 1741825395699241705L;
- 
+public enum SerializedSingleton implements Serializable {
+
+    /*
+    * Được triển khai dựa theo enum, vì phải đáp ứng được khi tuần tự hóa và chuyển thành byte, sau đó
+    * được khôi phục lại thì vẫn phải đảm bảo tính chất duy nhất của object, vì vậy nên sử dụng enum
+    * để đảm bảo được vấn đề này, nhưng sẽ chấp nhận việc enum sẽ không maintain thêm các lớp con được
+    * */
+
+    INSTANCE;
+
+    // Getter and setter methods
+    private String name;
+
+    // Constructor
     private SerializedSingleton() {
     }
- 
-    private static class SingletonHelper {
-        private static final SerializedSingleton instance = new SerializedSingleton();
+
+    public void setName(String name) {
+        this.name = name;
     }
- 
-    public static SerializedSingleton getInstance() {
-        return SingletonHelper.instance;
+
+    public String getName() {
+        return name;
     }
-     
-    /**
-     * Special hook provided by serialization where developer can control what object needs to sent.
-     * However this method is invoked on the new object instance created by de serialization process.
-     *
-     * @return
-     * @throws ObjectStreamException
-     */
-//    private Object readResolve() throws ObjectStreamException {
-//        return SingletonHelper.instance;
-//    }
- 
+
+    // Other methods
+    public void doSomething() {
+        System.out.println("Name: " + getName());
+    }
 }

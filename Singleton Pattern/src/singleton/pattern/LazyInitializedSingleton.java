@@ -9,7 +9,9 @@ package singleton.pattern;
  * @author Administrator
  */
 public class LazyInitializedSingleton {
-    // chỉ gọi đến khi nào cần dùng, không gây tốn tài nguyên nhưng sẽ mất đồng bộ trong multithread
+
+    /* chỉ gọi đến khi nào cần dùng, không gây tốn tài nguyên nhưng sẽ mất đồng bộ trong
+       multithread, double check locking chính là 1 trong các lazy Initialized, khởi tạo lười biếng */
     private static LazyInitializedSingleton instance;
  
     private LazyInitializedSingleton() {

@@ -16,7 +16,7 @@ public class SingletonSerializedTest {
  
     public static void main(String[] args) throws FileNotFoundException, IOException, ClassNotFoundException {
  
-        SerializedSingleton serializedSingleton1 = SerializedSingleton.getInstance();
+        SerializedSingleton serializedSingleton1 = SerializedSingleton.INSTANCE;
         EnumSingleton enumSingleton1 = EnumSingleton.INSTANCE;
  
         ObjectOutput out = new ObjectOutputStream(new FileOutputStream("SingletonSerializedTest.txt"));

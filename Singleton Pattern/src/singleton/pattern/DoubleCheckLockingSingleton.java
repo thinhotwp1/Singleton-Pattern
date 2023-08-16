@@ -4,33 +4,44 @@
  */
 package singleton.pattern;
 
-/**
- *
- * @author Administrator
- */
+
 public class DoubleCheckLockingSingleton {
     
     private static volatile DoubleCheckLockingSingleton instance;
-    //  từ khóa volatile cho phép đồng bộ hóa không đúng cách để double-check locking
- 
+    private String name;
+
+    /*  từ khóa volatile cho phép đồng bộ hóa không đúng cách để double-check locking
+
+    DoubleCheckLockingSingleton ít được dùng ở thời điểm hiện tại: Lý do là vì khi block luồng ở bước 1
+    để kiểm tra có null hay không sẽ gây performent trong môi trường đa luồng khi nhiều
+    luồng phải đợi chờ kiểm tra, hoặc khi nhiều luồng cùng kiểm tra 1 lúc và thấy class null từ đó tạo
+    ra nhiều thể hiện của class, thay vào đó người ta sử dụng các cách an toàn hơn như holder hay eager
+    trong môi trường đa luồng
+    */
+
     private DoubleCheckLockingSingleton() {
     }
  
-    // check 2 lần, nếu instance = null check thêm synch xem nếu null nữa thì tạo instance mới
+    // check 2 lần, nếu instance = null check thêm sync xem nếu null nữa thì tạo instance mới
     public static DoubleCheckLockingSingleton getInstance() {
-        // Do something before get instance ...
+
         if (instance == null) {
-            // Do the task too long before create instance ...
-            // Block so other threads cannot come into while initialize
+            // check xem null không
             synchronized (DoubleCheckLockingSingleton.class) {
-                // Re-check again. Maybe another thread has initialized before
+                // sau khi sync check xem null không lần nữa
                 if (instance == null) {
                     instance = new DoubleCheckLockingSingleton();
                 }
             }
         }
-        // Do something after get instance ...
         return instance;
     }
-    
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 }
