@@ -9,7 +9,7 @@ import singleton.pattern.eager_singleton.EagerInitializedSingleton;
 import singleton.pattern.enum_singleton.EnumSingleton;
 import singleton.pattern.holder_singleton.HolderSingleton;
 
-public class SingletonPatternSample {
+public class SingletonPatternSample { //
     public static void main(String[] args) {
         /*
          * Ở những ví dụ dưới khi set name ở Singleton1 và lấy name ra ở Singleton2 thì có
