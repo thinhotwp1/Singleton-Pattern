@@ -2,7 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package singleton.pattern;
+package singleton.pattern.singletonSerialized;
+import singleton.pattern.enum_singleton.EnumSingleton;
+
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -11,7 +13,9 @@ import java.io.ObjectInput;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutput;
 import java.io.ObjectOutputStream;
- 
+/**
+ * @author Thinh Duy
+ */
 public class SingletonSerializedTest {
  
     public static void main(String[] args) throws FileNotFoundException, IOException, ClassNotFoundException {

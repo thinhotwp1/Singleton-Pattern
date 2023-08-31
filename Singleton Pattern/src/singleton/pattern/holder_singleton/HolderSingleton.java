@@ -1,5 +1,8 @@
-package singleton.pattern;
+package singleton.pattern.holder_singleton;
 
+/**
+ * @author Thinh Duy
+ */
 public class HolderSingleton {
 
     /*  Dựa vào một lớp static khác để tạo "ké" thể hiện duy nhất của class muốn tạo, từ khóa
@@ -21,11 +24,12 @@ public class HolderSingleton {
     }
 
 
+    public String getName() {
+        return name;
+    }
+
     public void setName(String name) {
         this.name = name;
     }
 
-    public String getName() {
-        return name;
-    }
 }

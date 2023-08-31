@@ -2,9 +2,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package singleton.pattern;
+package singleton.pattern.doublecheck_singleton;
 
-
+/**
+ * @author Thinh Duy
+ */
 public class DoubleCheckLockingSingleton {
     
     private static volatile DoubleCheckLockingSingleton instance;

@@ -2,13 +2,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package singleton.pattern;
+package singleton.pattern.enum_singleton;
 
 import java.util.Date;
 
 /**
- *
- * @author Administrator
+ * @author Thinh Duy
  */
 public enum EnumSingleton {
 
