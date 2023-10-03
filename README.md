@@ -17,7 +17,7 @@ Việc triển khai Java của mẫu Singleton sử dụng một private constru
 Kiểm tra các hạn chế về hiệu suất và tài nguyên của bạn và cẩn thận chọn một triển khai Singleton thích hợp cho các ứng dụng đa luồng (và chúng ta nên xem xét tất cả các ứng dụng đa luồng!).
 
 :rage3:
-Tóm lại: Nếu muốn khởi tạo lazy mà an toàn trong đa luồng thì sử dụng Holder Singleton, nếu muốn tạo ngay từ ban đầu và sử dụng nhiều trong suốt quá trình chạy như log thì sử dụng Eager Singleton, nếu muốn sử dụng an toàn đa luồng và không quan tâm tới việc mở rộng các lớp con thì sử dụng Enum Singleton, còn Double Check không nên dùng vì không đảm bảo an toàn đồng bộ đa luồng, và tránh các singleton khỏi Reflection Break Singleton bằng các biện pháp kiểm tra và ngăn chặn, nên sử dụng khai báo instance với volatile để đảm bảo các thay đổi vào biến sẽ được thực hiện ngay lập tức và đồng nhất giữa các luồng.
+Tóm lại: Nếu muốn khởi tạo lazy và an toàn trong đa luồng thì sử dụng Holder Singleton, nếu muốn tạo ngay từ ban đầu và sử dụng nhiều trong suốt quá trình chạy như log thì sử dụng Eager Singleton, nếu muốn sử dụng an toàn trong môi trường đa luồng và không quan tâm tới việc mở rộng các lớp con thì sử dụng Enum Singleton, còn Double Check không nên dùng vì không đảm bảo an toàn đồng bộ đa luồng, và tránh các singleton khỏi Reflection Break Singleton bằng các biện pháp kiểm tra và ngăn chặn, nên sử dụng khai báo instance với volatile để đảm bảo các thay đổi vào biến sẽ được thực hiện ngay lập tức và đồng nhất giữa các luồng.
 
 
 
